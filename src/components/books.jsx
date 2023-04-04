@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Books = ({ books, modifybooks }) => (
   <ul>
     {books.map((element) => (
-      <section key={new Date()} className="booksStorage">
+      <section key={Math.random()} className="booksStorage">
         <ul>
           <li>{element.category}</li>
           <li>{element.title}</li>
