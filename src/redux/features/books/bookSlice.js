@@ -31,10 +31,11 @@ const bookSlice = createSlice({
     },
     addBooks: (state, action) => {
       const newBook = action.payload;
-      return { ...state, books: [...state.books, newBook] };
+      return { ...state, books: [...state.books, { ...newBook, item_id: Math.random() }] };
     },
   },
 });
 
 export const { addBooks, removeBooks } = bookSlice.actions;
 export default bookSlice.reducer;
+
