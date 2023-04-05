@@ -6,7 +6,6 @@ import { addBooks } from '../redux/features/books/bookSlice';
 const Create = () => {
   const dispatch = useDispatch();
   const [input, changeInput] = useState({
-    item_id: Math.random(),
     title: '',
     author: '',
     category: '',
