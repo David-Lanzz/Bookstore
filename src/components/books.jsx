@@ -9,7 +9,7 @@ const Books = () => {
   return (
     <ul>
       {books.map((element) => (
-        <section key={Math.random()} className="booksStorage" id={element.item_id}>
+        <section key={element.item_id} className="booksStorage" id={element.item_id}>
           <ul>
             <li>{element.category}</li>
             <li>{element.title}</li>
