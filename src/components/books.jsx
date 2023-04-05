@@ -1,60 +1,54 @@
-import { NavLink } from 'react-router-dom';
 import '../styles/books.css';
-import PropTypes from 'prop-types';
-/* eslint-disable no-unused-vars */
+import { useSelector, useDispatch } from 'react-redux';
+import { removeBooks } from '../redux/features/books/bookSlice';
 
-const Books = ({ books, modifybooks }) => (
-  <ul>
-    {books.map((element) => (
-      <section key={new Date()} className="booksStorage">
-        <ul>
-          <li>{element.category}</li>
-          <li>{element.title}</li>
-          <li>{element.author}</li>
-          <li>
-            <NavLink className="links">Comments</NavLink>
-            {' '}
-            |
-            {' '}
-            <NavLink className="links">Remove</NavLink>
-            {' '}
-            |
-            {' '}
-            <NavLink className="links">Edit</NavLink>
-          </li>
-        </ul>
-        <div>
-          <div className="status" key={element.key} />
+const Books = () => {
+  const store = useSelector((store) => store);
+  const { books } = store.books;
+  const dispatch = useDispatch();
+  return (
+    <ul>
+      {books.map((element) => (
+        <section key={element.item_id} className="booksStorage" id={element.item_id}>
           <ul>
+            <li>{element.category}</li>
+            <li>{element.title}</li>
+            <li>{element.author}</li>
             <li>
-              <h2>
-                {element.percentage}
-                %
-              </h2>
+              <button type="button" className="links">Comments</button>
+              {' '}
+              |
+              {' '}
+              <button type="button" className="links" onClick={() => dispatch(removeBooks(element.item_id))}>Remove</button>
+              {' '}
+              |
+              {' '}
+              <button type="button" className="links">Edit</button>
             </li>
-            <li>COMPLETED</li>
           </ul>
-        </div>
-        {' '}
-        |
-        <ul>
-          <li><h5>CURRENT CHAPTER</h5></li>
-          <li>{element.chapter}</li>
-          <li><button type="button">UPDATE PROGRESS</button></li>
-        </ul>
-      </section>
-    ))}
-  </ul>
-);
-
-Books.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.shape({
-    category: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    percentage: PropTypes.number.isRequired,
-    chapter: PropTypes.number.isRequired,
-  })).isRequired,
-  modifybooks: PropTypes.func.isRequired,
+          <div>
+            <div className="status" key={element.key} />
+            <ul>
+              <li>
+                <h2>
+                  {element.percentage}
+                  %
+                </h2>
+              </li>
+              <li>COMPLETED</li>
+            </ul>
+          </div>
+          {' '}
+          |
+          <ul>
+            <li><h5>CURRENT CHAPTER</h5></li>
+            <li>{element.chapter}</li>
+            <li><button type="button">UPDATE PROGRESS</button></li>
+          </ul>
+        </section>
+      ))}
+    </ul>
+  );
 };
+
 export default Books;

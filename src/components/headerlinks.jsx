@@ -16,10 +16,10 @@ const Headerlink = ({ links }) => (
 );
 
 Headerlink.propTypes = {
-  links: PropTypes.arrayOf({
+  links: PropTypes.arrayOf(PropTypes.shape({
     link: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
-  }).isRequired,
+  })).isRequired,
 };
 
 export default Headerlink;
