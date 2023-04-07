@@ -9,7 +9,7 @@ const Books = () => {
   const { books, isLoading } = store.books;
   useEffect(() => {
     dispatch(booksFromAPI());
-  });
+  }, []);
 
   const handleDelete = (id) => {
     dispatch(removeBooks(id));
