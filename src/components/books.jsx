@@ -1,11 +1,25 @@
 import '../styles/books.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBooks } from '../redux/features/books/bookSlice';
+import { useEffect } from 'react';
+import { removeBooks, booksFromAPI, deleteFromAPI } from '../redux/features/books/bookSlice';
 
 const Books = () => {
-  const store = useSelector((store) => store);
-  const { books } = store.books;
   const dispatch = useDispatch();
+  const store = useSelector((store) => store);
+  const { books, isLoading } = store.books;
+  useEffect(() => {
+    dispatch(booksFromAPI());
+  });
+
+  const handleDelete = (id) => {
+    dispatch(removeBooks(id));
+    dispatch(deleteFromAPI(id));
+  };
+  if (isLoading) {
+    return (
+      <div>Loading...</div>
+    );
+  }
   return (
     <ul>
       {books.map((element) => (
@@ -19,7 +33,7 @@ const Books = () => {
               {' '}
               |
               {' '}
-              <button type="button" className="links" onClick={() => dispatch(removeBooks(element.item_id))}>Remove</button>
+              <button type="button" className="links" onClick={() => handleDelete(`${element.item_id}`)}>Remove</button>
               {' '}
               |
               {' '}
