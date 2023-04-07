@@ -12,6 +12,10 @@
   width: 100%;
 }
 
+.authorContainer {
+  width: 100%;
+}
+
 .title {
   width: 100%;
 }
@@ -20,8 +24,13 @@
   width: 100%;
 }
 
+.author {
+  width: 100%;
+}
+
 .title,
-.category {
+.category,
+.author {
   height: 3rem;
   padding: 0.5rem 1.3rem;
   font-size: 0.8rem;
