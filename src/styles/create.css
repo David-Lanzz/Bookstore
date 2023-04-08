@@ -24,6 +24,14 @@
   width: 100%;
 }
 
+.addbtn {
+  width: 10rem;
+  height: 3rem;
+  color: #fff;
+  background-color: rgba(68, 148, 223, 0.945);
+  border: none;
+}
+
 .author {
   width: 100%;
 }
@@ -55,14 +63,6 @@ button {
 
   .addheader {
     color: #8a8a8a;
-  }
-
-  .addbtn {
-    width: 10rem;
-    height: 3rem;
-    color: #fff;
-    background-color: rgba(68, 148, 223, 0.945);
-    border: none;
   }
 
   .categorycontainer {
