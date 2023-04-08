@@ -9,6 +9,20 @@
   gap: 0.6rem;
 }
 
+.route {
+  color: #9b9a9a;
+}
+
+.fa-solid {
+  border: solid 3px rgb(97, 177, 252);
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.route:focus {
+  color: #333;
+}
+
 .parent {
   margin-bottom: 2rem;
 }

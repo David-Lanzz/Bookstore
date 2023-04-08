@@ -20,44 +20,65 @@ const Books = () => {
       <div>Loading...</div>
     );
   }
+
   return (
     <ul>
       {books.map((element) => (
         <section key={element.item_id} className="booksStorage" id={element.item_id}>
           <ul>
-            <li>{element.category}</li>
-            <li>{element.title}</li>
-            <li>{element.author}</li>
+            <li className="cat">{element.category}</li>
+            <li className="tit"><h3>{element.title}</h3></li>
+            <li className="blued">{element.author}</li>
             <li>
-              <button type="button" className="links">Comments</button>
+              <button type="button" className="links buttons blued">Comments</button>
               {' '}
-              |
+              <span className="shortline">|</span>
               {' '}
-              <button type="button" className="links" onClick={() => handleDelete(`${element.item_id}`)}>Remove</button>
+              <button type="button" className="links buttons blued" onClick={() => handleDelete(`${element.item_id}`)}>Remove</button>
               {' '}
-              |
+              <span className="shortline">|</span>
               {' '}
-              <button type="button" className="links">Edit</button>
+              <button type="button" className="links buttons blued">Edit</button>
             </li>
           </ul>
           <div>
             <div className="status" key={element.key} />
-            <ul>
-              <li>
-                <h2>
-                  {element.percentage}
-                  %
-                </h2>
+            <ul className="progresssect">
+              <li className="percentcontainer">
+                <div
+                  className="percentbar"
+                  style={{
+                    width: '5rem',
+                    height: '5rem',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    background: `conic-gradient(rgba(106, 177, 243, 0.945) ${element.degree}deg, #ededed 0deg)`,
+                  }}
+                />
               </li>
-              <li>COMPLETED</li>
+              <li>
+                <article>
+                  <h3 className="percent">
+                    {element.percentage}
+                    %
+                  </h3>
+                </article>
+                <article className="cat small">COMPLETED</article>
+              </li>
+
             </ul>
           </div>
           {' '}
-          |
+          <span className="vert" />
           <ul>
-            <li><h5>CURRENT CHAPTER</h5></li>
-            <li>{element.chapter}</li>
-            <li><button type="button">UPDATE PROGRESS</button></li>
+            <li className="cat"><h5 className="curr">CURRENT CHAPTER</h5></li>
+            <li>
+              Chapter
+              {element.chapter}
+            </li>
+            <li><button type="button" className="btn">UPDATE PROGRESS</button></li>
           </ul>
         </section>
       ))}

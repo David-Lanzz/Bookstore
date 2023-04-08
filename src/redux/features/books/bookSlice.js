@@ -54,11 +54,27 @@ const bookSlice = createSlice({
       .addCase(booksFromAPI.fulfilled, (state, action) => {
         const raw = action.payload;
         const data = [];
-
+        let i = 0;
         for (const id in raw) {
           if (id) {
             const newbooks = raw[id][0];
             newbooks.item_id = id;
+            newbooks.index = i;
+            i += 1;
+            if (newbooks.index % 5 === 0) {
+              newbooks.chapter = 27;
+              newbooks.percentage = Math.floor((newbooks.chapter / 30) * 100);
+            } else if (newbooks.index % 3 === 0) {
+              newbooks.chapter = 25;
+              newbooks.percentage = Math.floor((newbooks.chapter / 32) * 100);
+            } else if (newbooks.index % 2 === 0) {
+              newbooks.chapter = 22;
+              newbooks.percentage = Math.floor((newbooks.chapter / 32) * 100);
+            } else {
+              newbooks.chapter = 16;
+              newbooks.percentage = Math.floor((newbooks.chapter / 25) * 100);
+            }
+            newbooks.degree = (newbooks.percentage / 100) * 360;
             data.push(newbooks);
           }
         }

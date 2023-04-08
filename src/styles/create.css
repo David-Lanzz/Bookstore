@@ -50,11 +50,27 @@ button {
   }
 
   .titlecontainer {
-    width: 60%;
+    width: 80%;
+  }
+
+  .addheader {
+    color: #8a8a8a;
+  }
+
+  .addbtn {
+    width: 10rem;
+    height: 2rem;
+    color: #fff;
+    background-color: rgba(68, 148, 223, 0.945);
+    border: none;
   }
 
   .categorycontainer {
-    width: 30%;
+    width: 60%;
+  }
+
+  .err {
+    color: red;
   }
 
   .title {
