@@ -15,8 +15,8 @@ const Create = () => {
   const handleChange = (e) => {
     changeInput({ ...input, [e.target.name]: e.target.value });
   };
-  const handleSubmit = ({ title, author, category }) => {
-    if (title && author && category) {
+  const handleSubmit = () => {
+    if (input.title && input.category && input.author) {
       const newObj = { ...input, item_id: `${Math.random()}` };
       dispatch(postToAPI(newObj));
       dispatch(addBooks(newObj));
