@@ -8,6 +8,7 @@
   min-height: 10rem;
   background-color: #fff;
   border-radius: 3px;
+  margin: 0 6%;
 }
 
 .vert {
@@ -16,29 +17,32 @@
   background-color: #d3d3d3;
 }
 
-ul {
+ul,
+.percentcontainer,
+.progresssect {
   display: flex;
+}
+
+.progresssect,
+ul {
   flex-direction: column;
+}
+
+ul {
   gap: 0.8rem;
 }
 
-.curr {
+.curr,
+.shortline {
   font-weight: 100;
 }
 
 .shortline {
   color: #b8b8b8;
-  font-weight: 100;
 }
 
 .percentcontainer {
-  display: flex;
   justify-content: center;
-}
-
-.progresssect {
-  display: flex;
-  flex-direction: column;
 }
 
 .percentbar::before {

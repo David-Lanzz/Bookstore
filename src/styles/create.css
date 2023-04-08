@@ -57,6 +57,10 @@ button {
     justify-content: space-between;
   }
 
+  .createsection {
+    padding: 0 6% 6% 6%;
+  }
+
   .titlecontainer {
     width: 80%;
   }
