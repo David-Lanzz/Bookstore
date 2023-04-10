@@ -1,5 +1,7 @@
 <a name="readme-top"></a>
 
+<img src="./src/images/myLogo.png"></img>
+
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -57,6 +59,7 @@
 - **[Adding and removing of books]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 ## 🚀 Live Demo <a name="live-demo"></a>

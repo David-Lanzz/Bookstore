@@ -8,17 +8,96 @@
   min-height: 10rem;
   background-color: #fff;
   border-radius: 3px;
+  margin: 0 6%;
+}
+
+.vert {
+  width: 1px;
+  height: 5rem;
+  background-color: #d3d3d3;
+}
+
+ul,
+.percentcontainer,
+.progresssect {
+  display: flex;
+}
+
+.progresssect,
+ul {
+  flex-direction: column;
 }
 
 ul {
-  display: flex;
-  flex-direction: column;
   gap: 0.8rem;
+}
+
+.curr,
+.shortline {
+  font-weight: 100;
+}
+
+.shortline {
+  color: #b8b8b8;
+}
+
+.percentcontainer {
+  justify-content: center;
+}
+
+.percentbar::before {
+  content: "";
+  position: absolute;
+  height: 4rem;
+  width: 4rem;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.cat {
+  color: #8a8a8a;
+}
+
+.tit {
+  font-size: 1.2rem;
+}
+
+.blued {
+  color: rgba(106, 177, 243, 0.945);
+}
+
+.buttons {
+  border: none;
+  background: transparent;
+}
+
+.btn {
+  width: 10rem;
+  height: 2rem;
+  background-color: rgba(68, 148, 223, 0.945);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.small {
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+
+.percent {
+  font-size: 1.8rem;
+  font-weight: 100;
 }
 
 @media screen and (min-width: 768px) {
   .booksStorage {
     grid-template-columns: 5fr 2fr 1fr 1fr;
     text-align: start;
+    padding-right: 13%;
+  }
+
+  .progresssect {
+    flex-direction: row;
   }
 }

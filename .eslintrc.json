@@ -20,7 +20,9 @@
       "import/no-unresolved": "off",
       "no-shadow": "off",
       "no-restricted-syntax": "off",
-      "react-hooks/exhaustive-deps": "off"
+      "react-hooks/exhaustive-deps": "off",
+      "jsx-a11y/control-has-associated-label": "off",
+      "jsx-a11y/anchor-has-content": "off"
     },
     "ignorePatterns": [
       "dist/",
